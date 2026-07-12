@@ -353,8 +353,8 @@
         <h1>Our Family Journey</h1>
         <p>Sign in once on this phone to open the shared trip.</p>
         <form class="login-form" id="loginForm">
-          <label>Email address<input id="emailInput" type="email" autocomplete="email" required /></label>
-          <label>Family access code<input id="codeInput" type="password" autocomplete="current-password" required /></label>
+          <label>Email address<input id="emailInput" type="email" autocomplete="email" autocapitalize="none" autocorrect="off" spellcheck="false" required /></label>
+          <label>Family access code<input id="codeInput" type="password" autocomplete="current-password" autocapitalize="none" autocorrect="off" spellcheck="false" required /></label>
           <button class="primary-button" id="loginButton" type="submit">Open our itinerary</button>
           <p class="login-status" id="loginStatus" role="status"></p>
         </form>
@@ -780,7 +780,7 @@
             method: "POST",
             body: JSON.stringify({
               email: document.querySelector("#emailInput").value.trim(),
-              code: document.querySelector("#codeInput").value,
+              code: document.querySelector("#codeInput").value.trim(),
             }),
           });
           token = result.token;
