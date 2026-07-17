@@ -295,6 +295,57 @@
       .food-copy p { color: var(--muted); font-size: 0.94rem; font-weight: 650; }
       .food-copy strong { font-family: "Cormorant Garamond", Georgia, serif; font-size: 1.2rem; font-style: italic; font-weight: 600; }
       .food-copy a { width: fit-content; color: var(--leaf); font-size: 0.7rem; font-weight: 900; text-decoration: none; text-transform: uppercase; }
+      .shopping-section { margin-top: 34px; border-top: 1px solid var(--line); padding-top: 30px; }
+      .shopping-heading { display: flex; align-items: end; justify-content: space-between; gap: 24px; margin-bottom: 16px; }
+      .shopping-heading h3 { max-width: 760px; margin: 0; font-family: "Cormorant Garamond", Georgia, serif; font-size: clamp(2.9rem, 7vw, 5.7rem); font-weight: 600; line-height: 0.86; letter-spacing: 0; }
+      .shopping-heading > p { max-width: 430px; margin: 0; color: var(--muted); font-weight: 680; line-height: 1.5; }
+      .shopping-warning { display: grid; grid-template-columns: minmax(220px, 0.75fr) minmax(0, 1.55fr); gap: 22px; margin-bottom: 14px; border: 1px solid rgba(144, 53, 33, 0.36); border-radius: 8px; background: #fff1ea; padding: 22px; }
+      .shopping-warning h4, .shopping-tool h4, .shopping-quality h4, .shopping-route h4 { margin: 0; font-family: "Cormorant Garamond", Georgia, serif; font-size: clamp(2rem, 4vw, 3.4rem); font-weight: 600; line-height: 0.94; letter-spacing: 0; }
+      .shopping-warning p:not(.label) { margin: 0 0 10px; color: #5a3329; font-weight: 690; line-height: 1.55; }
+      .shopping-warning a, .shopping-links a, .shopping-tax a { color: var(--blue); font-size: 0.72rem; font-weight: 900; text-decoration: none; text-transform: uppercase; }
+      .shopping-grid { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 12px; }
+      .shopping-card { grid-column: span 2; overflow: hidden; border: 1px solid var(--line); border-radius: 8px; background: var(--panel); box-shadow: 0 16px 38px rgba(30, 37, 32, 0.11); }
+      .shopping-card:nth-child(1), .shopping-card:nth-child(4) { grid-column: span 3; }
+      .shopping-image { position: relative; aspect-ratio: 7 / 5; overflow: hidden; background: #dedbd1; }
+      .shopping-image::after { content: ""; position: absolute; inset: 42% 0 0; background: linear-gradient(180deg, transparent, rgba(15, 14, 12, 0.66)); }
+      .shopping-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 700ms cubic-bezier(0.22, 1, 0.36, 1); }
+      .shopping-card:hover .shopping-image img { transform: scale(1.045); }
+      .shopping-image span { position: absolute; left: 12px; right: 12px; bottom: 12px; z-index: 1; color: #fff; font-size: 0.7rem; font-weight: 950; text-transform: uppercase; }
+      .shopping-copy { display: grid; gap: 9px; padding: clamp(16px, 2.5vw, 23px); }
+      .shopping-copy h4 { margin: 0; font-family: "Cormorant Garamond", Georgia, serif; font-size: clamp(1.9rem, 3.5vw, 3rem); font-weight: 600; line-height: 0.96; letter-spacing: 0; }
+      .shopping-copy p, .shopping-copy address { margin: 0; line-height: 1.48; }
+      .shopping-copy > p:not(.shopping-chinese):not(.shopping-hours) { color: var(--muted); font-weight: 660; }
+      .shopping-chinese { color: var(--leaf); font-size: 0.76rem; font-weight: 900; }
+      .shopping-copy address { border-left: 3px solid var(--sun); padding-left: 10px; font-style: normal; font-weight: 850; }
+      .shopping-hours { width: fit-content; border-radius: 999px; background: #e8f1ee; color: #24584b; padding: 6px 9px; font-size: 0.7rem; font-weight: 900; }
+      .shopping-copy details { border-top: 1px solid var(--line); padding-top: 10px; }
+      .shopping-copy summary { cursor: pointer; font-weight: 900; }
+      .shopping-copy details strong { display: block; margin-top: 11px; color: var(--rust); font-size: 0.7rem; text-transform: uppercase; }
+      .shopping-copy details p { margin-top: 4px; color: var(--muted); font-weight: 670; }
+      .shopping-links { display: flex; flex-wrap: wrap; gap: 8px 12px; margin-top: 3px; border-top: 1px solid var(--line); padding-top: 10px; }
+      .shopping-links .map-link { color: var(--leaf); }
+      .shopping-tool-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-top: 12px; }
+      .shopping-tool { border-radius: 8px; padding: clamp(18px, 3vw, 28px); }
+      .shopping-haggle { background: #172f38; color: #f8f1e4; }
+      .shopping-genuine { border: 1px solid rgba(47, 111, 94, 0.3); background: #edf6f1; }
+      .shopping-haggle .label { color: #f4bf62; }
+      .shopping-tool ol, .shopping-tool ul, .shopping-route ol { display: grid; gap: 10px; margin: 18px 0 0; padding: 0; list-style: none; }
+      .shopping-haggle li { display: grid; grid-template-columns: 30px minmax(0, 1fr); gap: 9px; align-items: start; font-weight: 690; line-height: 1.45; }
+      .shopping-haggle li span { display: grid; width: 28px; height: 28px; place-items: center; border: 1px solid rgba(255,255,255,.35); border-radius: 50%; color: #f4bf62; font-weight: 900; }
+      .shopping-genuine li { position: relative; padding-left: 23px; font-weight: 690; line-height: 1.45; }
+      .shopping-genuine li::before { content: "\2713"; position: absolute; left: 0; color: var(--leaf); font-weight: 950; }
+      .shopping-tax { margin-top: 20px; border-top: 1px solid rgba(47,111,94,.28); padding-top: 16px; }
+      .shopping-tax h5, .shopping-quality-grid h5 { margin: 0; font-size: 1rem; letter-spacing: 0; }
+      .shopping-tax p { color: #35564c; font-weight: 660; line-height: 1.5; }
+      .shopping-quality, .shopping-route { display: grid; grid-template-columns: minmax(210px, 0.72fr) minmax(0, 1.8fr); gap: 18px; margin-top: 12px; border-radius: 8px; padding: clamp(18px, 3vw, 28px); }
+      .shopping-quality { border: 1px solid var(--line); background: var(--panel); }
+      .shopping-quality-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 9px; }
+      .shopping-quality-grid article { border-left: 3px solid var(--rust); background: #f8f2e8; padding: 13px; }
+      .shopping-quality-grid p { margin: 7px 0 0; color: var(--muted); font-size: 0.87rem; font-weight: 660; line-height: 1.46; }
+      .shopping-route { background: #f5dba7; }
+      .shopping-route ol { counter-reset: shop-route; margin-top: 0; }
+      .shopping-route li { counter-increment: shop-route; position: relative; padding-left: 37px; font-weight: 700; line-height: 1.48; }
+      .shopping-route li::before { content: counter(shop-route, decimal-leading-zero); position: absolute; left: 0; color: #7a442e; font-weight: 950; }
 
       .guide-grid { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 10px; }
       .guide-card { grid-column: span 2; overflow: hidden; }
@@ -335,6 +386,15 @@
         .food-grid { display: flex; overflow-x: auto; gap: 10px; padding-bottom: 10px; scroll-snap-type: x mandatory; scrollbar-width: none; }
         .food-grid::-webkit-scrollbar { display: none; }
         .food-card { flex: 0 0 min(84vw, 340px); scroll-snap-align: start; }
+        .shopping-heading { align-items: start; flex-direction: column; gap: 10px; }
+        .shopping-heading h3 { font-size: 3.1rem; }
+        .shopping-warning, .shopping-tool-grid, .shopping-quality, .shopping-route { grid-template-columns: 1fr; }
+        .shopping-warning, .shopping-tool, .shopping-quality, .shopping-route { padding: 17px; }
+        .shopping-grid { display: flex; overflow-x: auto; gap: 10px; margin-right: -14px; padding: 0 14px 12px 0; scroll-snap-type: x mandatory; scrollbar-width: none; }
+        .shopping-grid::-webkit-scrollbar { display: none; }
+        .shopping-card, .shopping-card:nth-child(1), .shopping-card:nth-child(4) { flex: 0 0 min(88vw, 360px); scroll-snap-align: start; }
+        .shopping-copy h4 { font-size: 2.3rem; }
+        .shopping-quality-grid { grid-template-columns: 1fr; }
         .insight-grid { display: flex; overflow-x: auto; gap: 10px; padding-bottom: 10px; scroll-snap-type: x mandatory; scrollbar-width: none; }
         .insight-grid::-webkit-scrollbar { display: none; }
         .insight-card { flex: 0 0 min(82vw, 320px); scroll-snap-align: start; }
@@ -638,6 +698,66 @@
           </figure>
         `).join("");
 
+        const shopping = trip.shoppingByDestinationId?.[item.guideId || item.id];
+        const shoppingCards = (shopping?.places || []).map((place) => {
+          const sources = (place.sources || []).map((source) => `
+            <a href="${escapeHtml(source.url || "#")}" target="_blank" rel="noreferrer">${escapeHtml(source.label || "Source")}</a>
+          `).join("");
+          const shoppingMap = "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(place.mapQuery || place.address || place.title);
+          return `
+            <article class="shopping-card">
+              <div class="shopping-image">
+                <img src="${escapeHtml(place.image || "")}" alt="${escapeHtml(place.imageAlt || place.title || "Shanghai shopping")}" loading="lazy" />
+                <span>${escapeHtml(place.type || "Shopping stop")}</span>
+              </div>
+              <div class="shopping-copy">
+                <div><h4>${escapeHtml(place.title || "")}</h4><p class="shopping-chinese">${escapeHtml(place.chinese || "")}</p></div>
+                <address>${escapeHtml(place.address || "")}</address>
+                <p class="shopping-hours">${escapeHtml(place.hours || "")}</p>
+                <p>${escapeHtml(place.summary || "")}</p>
+                <details>
+                  <summary>What to buy and how to do it</summary>
+                  <strong>Best for</strong><p>${escapeHtml(place.bestFor || "")}</p>
+                  <strong>Before paying</strong><p>${escapeHtml(place.buyingTip || "")}</p>
+                  <strong>Route note</strong><p>${escapeHtml(place.routeTip || "")}</p>
+                </details>
+                <div class="shopping-links">
+                  <a class="map-link" href="${shoppingMap}" target="_blank" rel="noreferrer">Open map</a>
+                  ${sources}
+                  <a href="${escapeHtml(place.imageSourceUrl || "#")}" target="_blank" rel="noreferrer">Photo: ${escapeHtml(place.imageCredit || "Source")}</a>
+                </div>
+              </div>
+            </article>
+          `;
+        }).join("");
+        const haggleSteps = (shopping?.haggleSteps || []).map((step, index) => `<li><span>${index + 1}</span>${escapeHtml(step)}</li>`).join("");
+        const genuineChecklist = (shopping?.genuineChecklist || []).map((tip) => `<li>${escapeHtml(tip)}</li>`).join("");
+        const qualityChecks = (shopping?.qualityChecks || []).map((check) => `
+          <article><h5>${escapeHtml(check.title || "")}</h5><p>${escapeHtml(check.text || "")}</p></article>
+        `).join("");
+        const shoppingRoute = (shopping?.routePlan || []).map((step) => `<li>${escapeHtml(step)}</li>`).join("");
+        const shoppingMarkup = shoppingCards ? `
+          <section class="shopping-section">
+            <div class="shopping-heading">
+              <div><p class="label">${escapeHtml(shopping.updated || "Shanghai field guide")}</p><h3>The Shanghai shopping field guide</h3></div>
+              <p>${escapeHtml(shopping.intro || "")}</p>
+            </div>
+            <aside class="shopping-warning">
+              <div><p class="label">Read before the market</p><h4>${escapeHtml(shopping.warning?.title || "")}</h4></div>
+              <div><p>${escapeHtml(shopping.warning?.text || "")}</p><a href="${escapeHtml(shopping.warning?.sourceUrl || "#")}" target="_blank" rel="noreferrer">${escapeHtml(shopping.warning?.sourceLabel || "Source")}</a></div>
+            </aside>
+            <div class="shopping-grid">${shoppingCards}</div>
+            <div class="shopping-tool-grid">
+              <article class="shopping-tool shopping-haggle"><p class="label">Market script</p><h4>How to haggle without the drama</h4><ol>${haggleSteps}</ol></article>
+              <article class="shopping-tool shopping-genuine"><p class="label">Authenticity check</p><h4>For real goods, leave with proof</h4><ul>${genuineChecklist}</ul>
+                <div class="shopping-tax"><h5>${escapeHtml(shopping.taxRefund?.title || "")}</h5><p>${escapeHtml(shopping.taxRefund?.text || "")}</p><a href="${escapeHtml(shopping.taxRefund?.sourceUrl || "#")}" target="_blank" rel="noreferrer">${escapeHtml(shopping.taxRefund?.sourceLabel || "Source")}</a></div>
+              </article>
+            </div>
+            <div class="shopping-quality"><div><p class="label">Ten-second checks</p><h4>Inspect the exact item, not the display sample</h4></div><div class="shopping-quality-grid">${qualityChecks}</div></div>
+            <aside class="shopping-route"><div><p class="label">Built around your dates</p><h4>The route that fits this trip</h4></div><ol>${shoppingRoute}</ol></aside>
+          </section>
+        ` : "";
+
         const routeNotes = (item.routeNotes || []).map((note) => `<li>${escapeHtml(note)}</li>`).join("");
         const guide = trip.guideData?.[item.guideId || item.id];
         const guideCards = (guide?.cards || []).map((card) => `
@@ -688,6 +808,8 @@
             <div class="food-grid">${foodCards}</div>
           ` : ""}
 
+          ${shoppingMarkup}
+
           ${localLens ? `
             <div class="section-heading">
               <div><p class="label">Local lens</p><h3>Small things that make this stop better</h3></div>
@@ -720,6 +842,9 @@
         });
         destinationView.querySelectorAll(".food-image img").forEach((foodImage) => {
           foodImage.addEventListener("error", () => { foodImage.closest(".food-card").style.display = "none"; }, { once: true });
+        });
+        destinationView.querySelectorAll(".shopping-image img").forEach((shoppingImage) => {
+          shoppingImage.addEventListener("error", () => { shoppingImage.closest(".shopping-card").style.display = "none"; }, { once: true });
         });
       }
 
