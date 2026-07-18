@@ -295,6 +295,45 @@
       .food-copy p { color: var(--muted); font-size: 0.94rem; font-weight: 650; }
       .food-copy strong { font-family: "Cormorant Garamond", Georgia, serif; font-size: 1.2rem; font-style: italic; font-weight: 600; }
       .food-copy a { width: fit-content; color: var(--leaf); font-size: 0.7rem; font-weight: 900; text-decoration: none; text-transform: uppercase; }
+      .flight-day-section { margin-top: 34px; border-top: 1px solid var(--line); padding-top: 30px; }
+      .flight-day-heading { display: flex; align-items: end; justify-content: space-between; gap: 24px; margin-bottom: 16px; }
+      .flight-day-heading h3 { max-width: 760px; margin: 0; font-family: "Cormorant Garamond", Georgia, serif; font-size: clamp(3rem, 7vw, 5.8rem); font-weight: 600; line-height: .86; letter-spacing: 0; }
+      .flight-day-heading > p { max-width: 440px; margin: 0; color: var(--muted); font-weight: 680; line-height: 1.52; }
+      .flight-day-hard-stop { display: grid; grid-template-columns: minmax(150px, .45fr) minmax(0, 1.7fr); gap: 22px; align-items: center; margin-bottom: 14px; border-radius: 8px; background: #17313b; color: #fffaf0; padding: clamp(20px, 4vw, 38px); box-shadow: 0 20px 50px rgba(23,49,59,.2); }
+      .flight-day-hard-stop > time { font-family: "Cormorant Garamond", Georgia, serif; font-size: clamp(3.8rem, 8vw, 7rem); font-weight: 600; line-height: .8; }
+      .flight-day-hard-stop .label { color: #f4bf62; }
+      .flight-day-hard-stop h4 { margin: 2px 0 8px; font-family: "Cormorant Garamond", Georgia, serif; font-size: clamp(2rem, 4vw, 3.4rem); font-weight: 600; line-height: .95; letter-spacing: 0; }
+      .flight-day-hard-stop p:last-child { max-width: 760px; margin: 0; color: rgba(255,250,240,.82); font-weight: 680; line-height: 1.52; }
+      .flight-day-layout { display: grid; grid-template-columns: minmax(320px, .78fr) minmax(0, 1.42fr); gap: 14px; }
+      .flight-day-timeline { display: grid; gap: 0; margin: 0; border: 1px solid var(--line); border-radius: 8px; background: var(--panel); padding: clamp(18px, 3vw, 28px); list-style: none; }
+      .flight-day-step { position: relative; display: grid; grid-template-columns: 78px minmax(0,1fr); gap: 13px; padding: 0 0 20px; }
+      .flight-day-step:not(:last-child)::before { content: ""; position: absolute; top: 29px; bottom: 4px; left: 7px; width: 1px; background: rgba(47,111,94,.32); }
+      .flight-day-step time { position: relative; color: var(--leaf); font-size: .76rem; font-weight: 950; text-transform: uppercase; }
+      .flight-day-step time::before { content: ""; display: inline-block; width: 9px; height: 9px; margin-right: 8px; border: 2px solid var(--panel); border-radius: 50%; background: var(--sun); box-shadow: 0 0 0 1px var(--leaf); }
+      .flight-day-step h4, .flight-day-photo h4, .flight-day-tip h4 { margin: 0; font-family: "Cormorant Garamond", Georgia, serif; font-weight: 600; letter-spacing: 0; }
+      .flight-day-step h4 { font-size: 1.5rem; line-height: 1; }
+      .flight-day-step p { margin: 7px 0 0; color: var(--muted); font-size: .9rem; font-weight: 660; line-height: 1.48; }
+      .flight-day-photo-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 12px; }
+      .flight-day-photo { overflow: hidden; margin: 0; border-radius: 8px; background: #f0e7d8; }
+      .flight-day-photo:first-child { grid-column: 1 / -1; }
+      .flight-day-photo > div { position: relative; aspect-ratio: 16/9; overflow: hidden; }
+      .flight-day-photo:not(:first-child) > div { aspect-ratio: 4/3; }
+      .flight-day-photo > div::after { content: ""; position: absolute; inset: 40% 0 0; background: linear-gradient(180deg,transparent,rgba(14,13,11,.68)); }
+      .flight-day-photo img { width: 100%; height: 100%; object-fit: cover; transition: transform 800ms cubic-bezier(.22,1,.36,1); }
+      .flight-day-photo:hover img { transform: scale(1.045); }
+      .flight-day-photo > div span { position: absolute; right: 13px; bottom: 12px; z-index: 1; color: #fff; font-size: .7rem; font-weight: 950; text-transform: uppercase; }
+      .flight-day-photo figcaption { padding: clamp(15px,2.5vw,23px); }
+      .flight-day-photo h4 { font-size: clamp(2rem,3.5vw,3.4rem); line-height: .94; }
+      .flight-day-photo p { margin: 9px 0 12px; color: #5f564b; font-weight: 660; line-height: 1.48; }
+      .flight-day-photo a, .flight-day-tip a { color: var(--leaf); font-size: .7rem; font-weight: 900; text-decoration: none; text-transform: uppercase; }
+      .flight-day-tip-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 10px; margin-top: 12px; }
+      .flight-day-tip { display: grid; align-content: start; min-height: 230px; border: 1px solid var(--line); border-radius: 8px; background: var(--panel); padding: 18px; }
+      .flight-day-tip:nth-child(3n+2) { background: #edf6f1; }
+      .flight-day-tip:nth-child(3n) { background: #fff3d6; }
+      .flight-day-tip > span { width: fit-content; border-radius: 999px; background: #e4f0ec; color: var(--leaf); padding: 6px 9px; font-size: .7rem; font-weight: 950; text-transform: uppercase; }
+      .flight-day-tip h4 { margin-top: 24px; font-size: 1.55rem; line-height: 1; }
+      .flight-day-tip p { margin: 9px 0 14px; color: var(--muted); font-size: .9rem; font-weight: 660; line-height: 1.48; }
+      .flight-day-tip a { align-self: end; }
       .shopping-section { margin-top: 34px; border-top: 1px solid var(--line); padding-top: 30px; }
       .shopping-heading { display: flex; align-items: end; justify-content: space-between; gap: 24px; margin-bottom: 16px; }
       .shopping-heading h3 { max-width: 760px; margin: 0; font-family: "Cormorant Garamond", Georgia, serif; font-size: clamp(2.9rem, 7vw, 5.7rem); font-weight: 600; line-height: 0.86; letter-spacing: 0; }
@@ -386,6 +425,19 @@
         .food-grid { display: flex; overflow-x: auto; gap: 10px; padding-bottom: 10px; scroll-snap-type: x mandatory; scrollbar-width: none; }
         .food-grid::-webkit-scrollbar { display: none; }
         .food-card { flex: 0 0 min(84vw, 340px); scroll-snap-align: start; }
+        .flight-day-heading { align-items: start; flex-direction: column; gap: 10px; }
+        .flight-day-heading h3 { font-size: 3.2rem; }
+        .flight-day-hard-stop, .flight-day-layout { grid-template-columns: 1fr; }
+        .flight-day-hard-stop { gap: 13px; padding: 18px; }
+        .flight-day-hard-stop > time { font-size: 4.7rem; }
+        .flight-day-timeline { padding: 16px; }
+        .flight-day-step { grid-template-columns: 72px minmax(0,1fr); }
+        .flight-day-photo-grid, .flight-day-tip-grid { display: flex; overflow-x: auto; gap: 10px; padding: 0 14px 12px 0; scroll-snap-type: x mandatory; scrollbar-width: none; }
+        .flight-day-photo-grid::-webkit-scrollbar, .flight-day-tip-grid::-webkit-scrollbar { display: none; }
+        .flight-day-photo, .flight-day-photo:first-child { flex: 0 0 min(88vw,360px); scroll-snap-align: start; }
+        .flight-day-photo > div, .flight-day-photo:first-child > div, .flight-day-photo:not(:first-child) > div { aspect-ratio: 4/3; }
+        .flight-day-photo h4 { font-size: 2.4rem; }
+        .flight-day-tip { flex: 0 0 min(82vw,330px); min-height: 230px; scroll-snap-align: start; }
         .shopping-heading { align-items: start; flex-direction: column; gap: 10px; }
         .shopping-heading h3 { font-size: 3.1rem; }
         .shopping-warning, .shopping-tool-grid, .shopping-quality, .shopping-route { grid-template-columns: 1fr; }
@@ -698,6 +750,52 @@
           </figure>
         `).join("");
 
+        const flightDay = trip.flightDayFeatureByDestinationId?.[item.id];
+        const flightDaySchedule = (flightDay?.schedule || []).map((step) => `
+          <li class="flight-day-step">
+            <time>${escapeHtml(step.time || "")}</time>
+            <div><h4>${escapeHtml(step.title || "")}</h4><p>${escapeHtml(step.text || "")}</p></div>
+          </li>
+        `).join("");
+        const flightDayPhotos = (flightDay?.photos || []).map((photo) => `
+          <figure class="flight-day-photo">
+            <div>
+              <img src="${escapeHtml(photo.image || "")}" alt="${escapeHtml(photo.alt || photo.title || "Caserta")}" loading="lazy" />
+              <span>${escapeHtml(photo.tag || "Caserta")}</span>
+            </div>
+            <figcaption>
+              <h4>${escapeHtml(photo.title || "")}</h4>
+              <p>${escapeHtml(photo.text || "")}</p>
+              <a href="${escapeHtml(photo.sourceUrl || "#")}" target="_blank" rel="noreferrer">Photo: ${escapeHtml(photo.credit || "Source")}</a>
+            </figcaption>
+          </figure>
+        `).join("");
+        const flightDayTips = (flightDay?.tips || []).map((tip) => `
+          <article class="flight-day-tip">
+            <span>${escapeHtml(tip.label || "Tip")}</span>
+            <h4>${escapeHtml(tip.title || "")}</h4>
+            <p>${escapeHtml(tip.text || "")}</p>
+            <a href="${escapeHtml(tip.linkUrl || "#")}" target="_blank" rel="noreferrer">${escapeHtml(tip.linkLabel || "Official details")}</a>
+          </article>
+        `).join("");
+        const flightDayMarkup = flightDay ? `
+          <section class="flight-day-section">
+            <div class="flight-day-heading">
+              <div><p class="label">${escapeHtml(flightDay.kicker || "Flight day")}</p><h3>${escapeHtml(flightDay.title || "")}</h3></div>
+              <p>${escapeHtml(flightDay.intro || "")}</p>
+            </div>
+            <aside class="flight-day-hard-stop">
+              <time>${escapeHtml(flightDay.hardStop?.time || "")}</time>
+              <div><p class="label">Airport safety line</p><h4>${escapeHtml(flightDay.hardStop?.title || "")}</h4><p>${escapeHtml(flightDay.hardStop?.text || "")}</p></div>
+            </aside>
+            <div class="flight-day-layout">
+              <ol class="flight-day-timeline">${flightDaySchedule}</ol>
+              <div class="flight-day-photo-grid">${flightDayPhotos}</div>
+            </div>
+            <div class="flight-day-tip-grid">${flightDayTips}</div>
+          </section>
+        ` : "";
+
         const shopping = trip.shoppingByDestinationId?.[item.guideId || item.id];
         const shoppingCards = (shopping?.places || []).map((place) => {
           const sources = (place.sources || []).map((source) => `
@@ -808,6 +906,8 @@
             <div class="food-grid">${foodCards}</div>
           ` : ""}
 
+          ${flightDayMarkup}
+
           ${shoppingMarkup}
 
           ${localLens ? `
@@ -845,6 +945,9 @@
         });
         destinationView.querySelectorAll(".shopping-image img").forEach((shoppingImage) => {
           shoppingImage.addEventListener("error", () => { shoppingImage.closest(".shopping-card").style.display = "none"; }, { once: true });
+        });
+        destinationView.querySelectorAll(".flight-day-photo img").forEach((flightDayImage) => {
+          flightDayImage.addEventListener("error", () => { flightDayImage.closest(".flight-day-photo").style.display = "none"; }, { once: true });
         });
       }
 
