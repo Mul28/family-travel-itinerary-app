@@ -1,4 +1,4 @@
-const CACHE_NAME = "family-journey-v5";
+const CACHE_NAME = "family-journey-v6";
 const APP_SHELL = ["./", "./manifest.webmanifest", "./icon.svg"];
 
 self.addEventListener("install", (event) => {
