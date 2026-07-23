@@ -398,6 +398,7 @@
       .guide-copy p { margin: 9px 0 0; color: var(--muted); font-size: 0.9rem; font-weight: 650; line-height: 1.48; }
       .guide-copy .guide-tip { color: var(--ink); font-weight: 800; }
       .guide-copy a { display: inline-block; margin-top: 11px; color: var(--blue); font-size: 0.78rem; font-weight: 850; text-decoration: none; }
+      .guide-copy a + a { margin-left: 10px; }
       .deal-notes { margin-top: 11px; border: 1px solid #ead7a9; border-radius: 8px; background: #fff5d9; padding: 15px; }
       .deal-notes ul { margin: 8px 0 0; padding-left: 19px; color: #51483b; font-weight: 700; line-height: 1.5; }
 
@@ -869,6 +870,7 @@
               <p>${escapeHtml(card.text || "")}</p>
               <p class="guide-tip">${escapeHtml(card.tip || "")}</p>
               <a href="${escapeHtml(card.sourceUrl || "#")}" target="_blank" rel="noreferrer">${escapeHtml(card.sourceLabel || "Source")}</a>
+              ${card.mapUrl ? `<a href="${escapeHtml(card.mapUrl)}" target="_blank" rel="noreferrer">${escapeHtml(card.mapLabel || "Open map")}</a>` : ""}
             </div>
           </article>
         `).join("");
