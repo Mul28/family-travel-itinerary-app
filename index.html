@@ -264,6 +264,8 @@
       .day-head { display: flex; align-items: end; justify-content: space-between; gap: 10px; }
       .day-head label { width: min(220px, 100%); }
       .day-card > label { margin-top: 10px; }
+      .day-card .day-shopping-plan { margin-top: 14px; border-top: 1px solid rgba(144, 53, 33, 0.24); padding-top: 14px; color: var(--clay); }
+      .day-card .day-shopping-plan textarea { border-color: rgba(144, 53, 33, 0.28); background: #fff8ef; color: var(--ink); }
       .remove-button { width: 40px; height: 40px; flex: 0 0 auto; border: 1px solid var(--line); border-radius: 8px; background: #fff; color: var(--clay); font-size: 1.2rem; font-weight: 900; }
 
       .section-heading { display: flex; align-items: end; justify-content: space-between; gap: 20px; margin: 28px 0 14px; }
@@ -717,6 +719,7 @@
             <label>Morning<textarea data-day-index="${index}" data-day-field="morning">${escapeHtml(day.morning || "")}</textarea></label>
             <label>Afternoon<textarea data-day-index="${index}" data-day-field="afternoon">${escapeHtml(day.afternoon || "")}</textarea></label>
             <label>Evening<textarea data-day-index="${index}" data-day-field="evening">${escapeHtml(day.evening || "")}</textarea></label>
+            ${day.shopping ? `<label class="day-shopping-plan">Hong Kong shopping<textarea data-day-index="${index}" data-day-field="shopping">${escapeHtml(day.shopping || "")}</textarea></label>` : ""}
           </article>
         `).join("");
 
@@ -838,22 +841,22 @@
         const shoppingMarkup = shoppingCards ? `
           <section class="shopping-section">
             <div class="shopping-heading">
-              <div><p class="label">${escapeHtml(shopping.updated || "Shanghai field guide")}</p><h3>The Shanghai shopping field guide</h3></div>
+              <div><p class="label">${escapeHtml(shopping.updated || "Shopping field guide")}</p><h3>${escapeHtml(shopping.title || "Shopping field guide")}</h3></div>
               <p>${escapeHtml(shopping.intro || "")}</p>
             </div>
             <aside class="shopping-warning">
-              <div><p class="label">Read before the market</p><h4>${escapeHtml(shopping.warning?.title || "")}</h4></div>
+              <div><p class="label">${escapeHtml(shopping.warningKicker || "Read before the market")}</p><h4>${escapeHtml(shopping.warning?.title || "")}</h4></div>
               <div><p>${escapeHtml(shopping.warning?.text || "")}</p><a href="${escapeHtml(shopping.warning?.sourceUrl || "#")}" target="_blank" rel="noreferrer">${escapeHtml(shopping.warning?.sourceLabel || "Source")}</a></div>
             </aside>
             <div class="shopping-grid">${shoppingCards}</div>
             <div class="shopping-tool-grid">
-              <article class="shopping-tool shopping-haggle"><p class="label">Market script</p><h4>How to haggle without the drama</h4><ol>${haggleSteps}</ol></article>
-              <article class="shopping-tool shopping-genuine"><p class="label">Authenticity check</p><h4>For real goods, leave with proof</h4><ul>${genuineChecklist}</ul>
+              <article class="shopping-tool shopping-haggle"><p class="label">${escapeHtml(shopping.haggleKicker || "Market script")}</p><h4>${escapeHtml(shopping.haggleTitle || "How to haggle without the drama")}</h4><ol>${haggleSteps}</ol></article>
+              <article class="shopping-tool shopping-genuine"><p class="label">${escapeHtml(shopping.genuineKicker || "Authenticity check")}</p><h4>${escapeHtml(shopping.genuineTitle || "For real goods, leave with proof")}</h4><ul>${genuineChecklist}</ul>
                 <div class="shopping-tax"><h5>${escapeHtml(shopping.taxRefund?.title || "")}</h5><p>${escapeHtml(shopping.taxRefund?.text || "")}</p><a href="${escapeHtml(shopping.taxRefund?.sourceUrl || "#")}" target="_blank" rel="noreferrer">${escapeHtml(shopping.taxRefund?.sourceLabel || "Source")}</a></div>
               </article>
             </div>
-            <div class="shopping-quality"><div><p class="label">Ten-second checks</p><h4>Inspect the exact item, not the display sample</h4></div><div class="shopping-quality-grid">${qualityChecks}</div></div>
-            <aside class="shopping-route"><div><p class="label">Built around your dates</p><h4>The route that fits this trip</h4></div><ol>${shoppingRoute}</ol></aside>
+            <div class="shopping-quality"><div><p class="label">${escapeHtml(shopping.qualityKicker || "Ten-second checks")}</p><h4>${escapeHtml(shopping.qualityTitle || "Inspect the exact item, not the display sample")}</h4></div><div class="shopping-quality-grid">${qualityChecks}</div></div>
+            <aside class="shopping-route"><div><p class="label">${escapeHtml(shopping.routeKicker || "Built around your dates")}</p><h4>${escapeHtml(shopping.routeTitle || "The route that fits this trip")}</h4></div><ol>${shoppingRoute}</ol></aside>
           </section>
         ` : "";
 
@@ -1119,7 +1122,7 @@
       destinationView.addEventListener("click", (event) => {
         const item = getDestination();
         if (event.target.id === "addDayButton") {
-          item.days.push({ date: "", morning: "", afternoon: "", evening: "" });
+          item.days.push({ date: "", morning: "", afternoon: "", evening: "", shopping: "" });
           renderDestination();
           queueSave();
         }
